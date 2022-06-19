@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <header>
+        <h1>My Library</h1>
+      </header>
+      <form action="" id="add-book-form">
+        <div class="title-input">
+          <label for="book-title">Title</label>
+          <br />
+          <input type="text" id="book-title" />
+        </div>
+        <div class="author-input">
+          <label for="book-author">Author</label><br />
+          <input type="text" id="book-author" />
+        </div>
+        <div class="numberOfPages-input">
+          <label for="book-pages">Pages</label><br />
+          <input type="text" id="book-pages" />
+        </div>
+        <div class="status-input">
+          <fieldset>
+            <legend>Status</legend>
+
+            <input
+              type="radio"
+              id="book-status-read"
+              name="book-status"
+              value="true"
+              checked
+            />
+            <label for="book-status-read">Read</label>
+
+            <input
+              type="radio"
+              id="book-status-not-read"
+              name="book-status"
+              value="false"
+            />
+            <label for="book-status-not-read">Not Read</label>
+          </fieldset>
+        </div>
+        <button type="submit" id="add-book-button">Add</button>
+      </form>
+      <div class="table-container">
+        <table id="books-table">
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Number Of Pages</th>
+            <th>Read</th>
+            <!-- <th>Actions</th> -->
+          </tr>
+          <!-- <tr>
+          <td>The Hobbit</td>
+          <td>J.R. Tolkien</td>
+          <td>295</td>
+          <td>Read</td>
+        </tr> -->
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
