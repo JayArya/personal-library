@@ -1,6 +1,4 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -16,21 +14,22 @@ body {
   height: 100%;
   width: 70%;
   display: grid;
+  place-content: center;
   grid-template: 10% 20% 1fr/1fr;
   gap: 2%;
 }
 
 #add-book-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  /* justify-items: end; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 1%;
 }
 
 #add-book-button {
   width: 3rem;
-  margin: 2% 0;
+  margin: 2% 1%;
+  padding: 1%;
   grid-column: 1/-1;
   justify-self: end;
 }
@@ -45,6 +44,7 @@ body {
   width: 100%;
 }
 
-tr:nth-child(even) {
-  background-color: #eeeeee;
+.book-status-toggle-button {
+  display: block;
+  width: 80%;
 }

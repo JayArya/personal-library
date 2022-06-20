@@ -6,12 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
     <script src="./index.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="main-container">
       <header>
-        <h1>My Library</h1>
+        <h1 class="display-2">My Library</h1>
       </header>
       <form action="" id="add-book-form">
         <div class="title-input">
@@ -34,39 +45,43 @@
             <input
               type="radio"
               id="book-status-read"
+              class="form-check-input"
               name="book-status"
               value="true"
               checked
             />
             <label for="book-status-read">Read</label>
-
+            <br />
             <input
               type="radio"
               id="book-status-not-read"
+              class="form-check-input"
               name="book-status"
               value="false"
             />
             <label for="book-status-not-read">Not Read</label>
           </fieldset>
         </div>
-        <button type="submit" id="add-book-button">Add</button>
+        <div class="form-submit-button">
+          <button type="submit" class="btn btn-success" id="add-book-button">
+            Add
+          </button>
+        </div>
       </form>
       <div class="table-container">
-        <table id="books-table">
-          <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Number Of Pages</th>
-            <th>Status</th>
-
-            <!-- <th>Actions</th> -->
-          </tr>
-          <!-- <tr>
-          <td>The Hobbit</td>
-          <td>J.R. Tolkien</td>
-          <td>295</td>
-          <td>Read</td>
-        </tr> -->
+        <table
+          class="table table-striped table-hover table-bordered table-responsive"
+          id="books-table"
+        >
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Author</th>
+              <th scope="col">Pages</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider"></tbody>
         </table>
       </div>
     </div>

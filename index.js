@@ -1,6 +1,8 @@
 let userLibrary = [];
 let rowCounter = 0;
-const booksTable = document.getElementById("books-table");
+const booksTable = document
+  .getElementById("books-table")
+  .querySelector("tbody");
 const addBookForm = document.getElementById("add-book-form");
 
 addBookForm.addEventListener(
@@ -47,6 +49,8 @@ addBookRow = ({ title, author, numberOfPages, haveRead }) => {
   let rowNum = rowCounter;
   const deleteBookButton = document.createElement("button");
   deleteBookButton.innerText = "Delete";
+  deleteBookButton.classList.add("btn");
+  deleteBookButton.classList.add("btn-warning");
   // deleteBookButton.id = "deleteButton";
   deleteBookButton.addEventListener("click", () => {
     userLibrary[rowNum] = null;
@@ -55,6 +59,9 @@ addBookRow = ({ title, author, numberOfPages, haveRead }) => {
 
   const bookStatusToggle = document.createElement("button");
   bookStatusToggle.innerText = haveRead ? "Read" : "Pending";
+  bookStatusToggle.classList.add("btn");
+  bookStatusToggle.classList.add("btn-secondary");
+  // bookStatusToggle.classList.add("book-status-toggle-button");
   bookStatusToggle.addEventListener("click", () => {
     userLibrary[rowNum].haveRead = !userLibrary[rowNum].haveRead;
     bookStatusToggle.innerText = userLibrary[rowNum].haveRead
@@ -73,4 +80,4 @@ addBookRow = ({ title, author, numberOfPages, haveRead }) => {
   rowCounter++;
 };
 
-addToLibrary("The Hobbit", "J.R.R. Tolkien", "295", true);
+addToLibrary("The Hobbit", "J.R.R. Tolkien", "295", false);
