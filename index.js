@@ -20,11 +20,20 @@ addBookForm.addEventListener(
   false
 );
 
-function Book(title, author, numberOfPages, haveRead) {
-  this.title = title;
-  this.author = author;
-  this.numberOfPages = numberOfPages;
-  this.haveRead = haveRead;
+// function Book(title, author, numberOfPages, haveRead) {
+//   this.title = title;
+//   this.author = author;
+//   this.numberOfPages = numberOfPages;
+//   this.haveRead = haveRead;
+// }
+
+class Book {
+  constructor(title, author, numberOfPages, haveRead) {
+    this.title = title;
+    this.author = author;
+    this.numberOfPages = numberOfPages;
+    this.haveRead = haveRead;
+  }
 }
 
 addToLibrary = (title, author, numberOfPages, haveRead) => {
@@ -51,7 +60,6 @@ addBookRow = ({ title, author, numberOfPages, haveRead }) => {
   deleteBookButton.innerText = "Delete";
   deleteBookButton.classList.add("btn");
   deleteBookButton.classList.add("btn-warning");
-  // deleteBookButton.id = "deleteButton";
   deleteBookButton.addEventListener("click", () => {
     userLibrary[rowNum] = null;
     document.querySelector(`[data-row-num="${rowNum}"]`).remove();
@@ -61,7 +69,6 @@ addBookRow = ({ title, author, numberOfPages, haveRead }) => {
   bookStatusToggle.innerText = haveRead ? "Read" : "Pending";
   bookStatusToggle.classList.add("btn");
   bookStatusToggle.classList.add("btn-secondary");
-  // bookStatusToggle.classList.add("book-status-toggle-button");
   bookStatusToggle.addEventListener("click", () => {
     userLibrary[rowNum].haveRead = !userLibrary[rowNum].haveRead;
     bookStatusToggle.innerText = userLibrary[rowNum].haveRead
@@ -73,7 +80,6 @@ addBookRow = ({ title, author, numberOfPages, haveRead }) => {
   row.insertCell(0).innerHTML = title;
   row.insertCell(1).innerHTML = author;
   row.insertCell(2).innerHTML = numberOfPages;
-  // row.insertCell(3).innerHTML = haveRead ? "Read" : "Not Read";
   row.insertCell(3).appendChild(bookStatusToggle);
   row.insertCell(4).appendChild(deleteBookButton);
   row.dataset.rowNum = rowNum;
