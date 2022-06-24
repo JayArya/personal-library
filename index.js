@@ -20,13 +20,6 @@ addBookForm.addEventListener(
   false
 );
 
-// function Book(title, author, numberOfPages, haveRead) {
-//   this.title = title;
-//   this.author = author;
-//   this.numberOfPages = numberOfPages;
-//   this.haveRead = haveRead;
-// }
-
 class Book {
   constructor(title, author, numberOfPages, haveRead) {
     this.title = title;
